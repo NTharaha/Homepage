@@ -1,0 +1,85 @@
+@import color
+@import media-queries
+
+%align-center
+    display: flex
+    align-items: center
+
+.navbar
+    background: $light
+    height: 80px
+    display: flex
+    justify-content: space-between
+    padding: 0.5rem calc(( 100vw - 1200px )/2)
+    z-index: 10
+    position: relative
+
+    &_logo
+        color: $dark
+        cursor: pointer
+        text-decoration: none
+        font-size: 2rem
+        margin-left: 24px
+        @extend %align-center
+    
+    &_bars
+        opacity: 0
+
+        @include tablet
+            color: $dark
+            opacity: 1
+            position: absolute
+            top: 22px
+            right: 20px
+            font-size: 2rem
+
+
+    &_menu
+        @extend %align-center
+        list-style: none
+        text-align: center
+        margin-right: 24px
+        font-weight: bold
+
+        @include tablet
+            //display: none
+            position: fixed
+            top: 70px
+            right: -25px
+            background-color: $dark
+            flex-direction: column
+            width:100%
+            text-align: center
+            transform: translateX(100%)
+            transition: 0.6s
+
+        &-links
+            color: $dark
+            @extend %align-center
+            justify-content: center
+            text-decoration: none
+            padding: 0 1rem
+
+            @include tablet
+                color: white
+                margin: 25px
+
+            &:hover
+                color: $lime
+                transition: all
+
+        #button
+            padding: 10px 12px
+            border: none
+            outline: none
+            border-radius: 4px
+            color: $light
+            background: $lime
+
+            &:hover
+                background: $orangered
+                transition: all 0.3s ease
+
+            @include tablet
+                padding: 10px 40px
+
